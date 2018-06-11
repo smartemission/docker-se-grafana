@@ -58,7 +58,7 @@ datasources:
     # <int> org id. will default to orgId 1 if not specified
     orgId: 1
     # <string> url
-    url: ${SE_INFLUX_URL}
+    url: ${SE_INFLUX_DC1_URL}
     # <string> database password, if used
     password: ${SE_INFLUX_ADMIN_PASSWORD}
     # <string> database user, if used

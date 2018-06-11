@@ -2,7 +2,8 @@
 
 Grafana viewer for Calibration-related and AirSensEUR 
 data from InfluxDB. Fully functional:
-Includes Datasource and Dashboard definitions.
+Includes Datasource and Dashboard definitions. You mainly need to provide
+credential settings via Env-vars.
 
 ## Hosting
 
@@ -18,6 +19,7 @@ Variable|Meaning |Example
 `GF_SECURITY_ADMIN_USER`|Grafana admin username|secret
 `GF_SECURITY_ADMIN_PASSWORD`|Grafana admin password|secret
 `SE_INFLUX_URL`|full URL InfluxDB endpoint|`http://influxdb:8086`
+`SE_INFLUX_DC1_URL`|full URL InfluxDB endpoint for remote SE Data Collector for AirSensEUR|`http://dc1.smartemission.nl:8086`
 `SE_INFLUX_ADMIN_USER`|InfluxDB admin user name|secret
 `SE_INFLUX_ADMIN_PASSWORD`|InfluxDB admin user passwd|secret
 `GF_SERVER_ROOT_URL`|external URL Grafana Web App|`%(protocol)s://%(domain)s:%(http_port)s/grafana`
@@ -29,6 +31,11 @@ the `Grafana .ini` file format: `GF_<.ini section name>_<varname>`, all in capit
 
 This Image uses the standard Grafana Docker Image, mainly 
 adding "Provisioning" (as in Grafana v5+) files for Datasources (InfluxDB) and
-Dashboards. The [entry.sh](entry.sh) script will perform
+Dashboards. 
+
+Currently the Dashboards take from two InfluxDB Sources: the SE standard InfluxDB, used
+mainly for Calibration and the SE Data Collector InfluxDB, used mainly for AirSensEUR.
+
+The [entry.sh](entry.sh) script will perform
 some magic to substitute credentials from environment vars.
 It then calls the standard Grafana `/run.sh` script.
