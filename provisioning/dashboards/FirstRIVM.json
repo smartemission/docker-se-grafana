@@ -1,37 +1,8 @@
 {
-  "__inputs": [
-    {
-      "name": "InfluxDB",
-      "label": "InfluxDB",
-      "description": "",
-      "type": "datasource",
-      "pluginId": "influxdb",
-      "pluginName": "InfluxDB"
-    }
-  ],
-  "__requires": [
-    {
-      "type": "grafana",
-      "id": "grafana",
-      "name": "Grafana",
-      "version": "5.1.3"
-    },
-    {
-      "type": "panel",
-      "id": "graph",
-      "name": "Graph",
-      "version": "5.0.0"
-    },
-    {
-      "type": "datasource",
-      "id": "influxdb",
-      "name": "InfluxDB",
-      "version": "5.0.0"
-    }
-  ],
   "annotations": {
     "list": [
       {
+        "$$hashKey": "object:2344",
         "builtIn": 1,
         "datasource": "-- Grafana --",
         "enable": true,
@@ -45,7 +16,6 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "id": null,
   "links": [
     {
       "icon": "external link",
@@ -69,20 +39,6 @@
       "type": "row"
     },
     {
-      "collapsed": false,
-      "gridPos": {
-        "h": 1,
-        "w": 24,
-        "x": 0,
-        "y": 1
-      },
-      "id": 9,
-      "panels": [],
-      "repeat": null,
-      "title": "New row",
-      "type": "row"
-    },
-    {
       "aliasColors": {
         "rivm {station: nijmegen_graafseweg}": "#6ED0E0"
       },
@@ -98,7 +54,7 @@
         "h": 11,
         "w": 24,
         "x": 0,
-        "y": 2
+        "y": 1
       },
       "id": 1,
       "legend": {
@@ -293,7 +249,7 @@
         "h": 11,
         "w": 24,
         "x": 0,
-        "y": 13
+        "y": 12
       },
       "id": 7,
       "legend": {
@@ -488,7 +444,7 @@
         "h": 11,
         "w": 24,
         "x": 0,
-        "y": 24
+        "y": 23
       },
       "id": 5,
       "interval": "",
@@ -665,8 +621,8 @@
     "list": []
   },
   "time": {
-    "from": "2017-09-27T14:22:04.461Z",
-    "to": "2018-05-25T14:22:04.461Z"
+    "from": "now-30d",
+    "to": "now"
   },
   "timepicker": {
     "now": true,

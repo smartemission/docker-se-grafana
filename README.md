@@ -19,7 +19,6 @@ Variable|Meaning |Example
 `GF_SECURITY_ADMIN_USER`|Grafana admin username|secret
 `GF_SECURITY_ADMIN_PASSWORD`|Grafana admin password|secret
 `SE_INFLUX_URL`|full URL InfluxDB endpoint|`http://influxdb:8086`
-`SE_INFLUX_DC1_URL`|full URL InfluxDB endpoint for remote SE Data Collector for AirSensEUR|`http://dc1.smartemission.nl:8086`
 `SE_INFLUX_ADMIN_USER`|InfluxDB admin user name|secret
 `SE_INFLUX_ADMIN_PASSWORD`|InfluxDB admin user passwd|secret
 `GF_SERVER_ROOT_URL`|external URL Grafana Web App|`%(protocol)s://%(domain)s:%(http_port)s/grafana`
