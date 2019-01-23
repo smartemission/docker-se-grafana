@@ -2498,7 +2498,7 @@
           "dashLength": 10,
           "dashes": false,
           "datasource": "InfluxDB",
-          "description": "Average CO hour-values from both the RIVM Reference station NL10641 and ASE_NL average hour-values calculated via SE Stetl Python ETL-Calibration formulas. The 5 AE_NL stations were placed there between 1.8.2018 and 10.10.2018 before moved to final deployment sites around The Netherlands.",
+          "description": "Average CO hour-values from both the RIVM Reference station NL10641 and ASE_NL average hour-values calculated via SE Stetl Python ETL-Calibration formulas. The 5 AE_NL stations were placed there between 1.8.2018 and 10.10.2018 before moved to final deployment sites around The Netherlands. NB RIVM SOS does not provide CO for this station, CO ref values were obtained manually.",
           "editable": true,
           "error": false,
           "fill": 0,
@@ -2876,7 +2876,7 @@
           "targets": [
             {
               "$$hashKey": "object:495",
-              "alias": "",
+              "alias": "RIVM (station NL10742)",
               "dsType": "influxdb",
               "groupBy": [
                 {
@@ -2895,7 +2895,7 @@
               "measurement": "rivm",
               "orderByTime": "ASC",
               "policy": "default",
-              "query": "SELECT mean(\"value\") FROM \"rivm\" WHERE (\"component\" = 'carbon_monoxide__air_' AND \"station\" = 'nijmegen_ruyterstraat') AND $timeFilter GROUP BY time($__interval), \"station\" ",
+              "query": "SELECT mean(\"value\") * 1000 FROM \"rivm\" WHERE (\"component\" = 'carbon_monoxide__air_' AND \"station\" = 'nijmegen_ruyterstraat') AND $timeFilter GROUP BY time(1h), \"station\" ",
               "rawQuery": true,
               "refId": "A",
               "resultFormat": "time_series",
@@ -3083,8 +3083,8 @@
               "measurement": "rivm",
               "orderByTime": "ASC",
               "policy": "default",
-              "query": "SELECT mean(\"value\") FROM \"rivm\" WHERE \"component\" = 'carbon_monoxide__air_' AND $timeFilter GROUP BY time(1h), \"station\"",
-              "rawQuery": false,
+              "query": "SELECT mean(\"value\") FROM \"rivm\" WHERE (\"component\" = 'carbon_monoxide__air_' AND \"station\" = 'nijmegen_graafseweg') AND $timeFilter GROUP BY time(1h), \"station\"",
+              "rawQuery": true,
               "refId": "A",
               "resultFormat": "time_series",
               "select": [
@@ -3231,8 +3231,8 @@
     "list": []
   },
   "time": {
-    "from": "2018-08-01T15:16:21.908Z",
-    "to": "2019-01-01T16:16:21.908Z"
+    "from": "2018-08-01T03:38:44.387Z",
+    "to": "2019-01-02T13:51:19.790Z"
   },
   "timepicker": {
     "now": true,
